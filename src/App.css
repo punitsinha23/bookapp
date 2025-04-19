@@ -1,38 +1,166 @@
-.App {
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff6f6;
+}
+
+/* Page Title */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+/* Loading Text */
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Container for all book cards */
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+}
+
+/* Individual Book Card */
+.bookcard {
+  background-color:  #f5f5f5;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 240px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* NEW */
+  flex-direction: column; /* NEW */
+}
+
+
+/* Hover Effect */
+.bookcard:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Book Title */
+.bookcard h2 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+/* Book Author */
+.bookcard p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* Book Cover Image */
+.bookcover {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Responsive: One book per row on small devices */
+@media (max-width: 600px) {
+  .book-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .bookcard {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .bookcover {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Hero Section Container */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap; /* Makes it responsive on small screens */
+  
+}
+
+/* Left Text Box */
+.hero-text {
+  flex: 1;
+  padding: 20px;
+  color: #222; /* Dark text for light background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #ccc;          /* light gray border */
+  border-radius: 12px;             /* rounded corners */
+  background-color: #ffffffc2;     /* optional background for contrast */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-text p {
+  font-size: 1.2rem;
+}
+.hero-text ul {
+  padding: 10px;
+  margin-left: 28px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Right Image Box */
+.banner {
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: right;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.banner img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero-text, .banner {
+    width: 100%;
+  }
+
+  .banner img {
+    max-width: 100%;
   }
 }
+
