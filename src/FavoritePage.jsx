@@ -4,7 +4,7 @@ function FavoritePage({ favorites }) {
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
-    fetch("https://bookappapi-production-e3f8.up.railway.app/get/")
+    fetch("https://bookappapi-production-e3f8.up.railway.app/api/get")
       .then((res) => res.json())
       .then((data) => setAllBooks(data));
   }, []);
