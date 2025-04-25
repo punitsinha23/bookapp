@@ -59,7 +59,6 @@ export default function AddBooks({ onCreated }) {
 
       onCreated();
     } catch (error) {
-      console.error("Error:", error);
       setError(error.message || "Failed to add book.");
     } finally {
       setLoading(false);
