@@ -1,36 +1,28 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 
 function SearchBar({ searchTerm, setSearchTerm }) {
-  // Creating a reference for the input element
-  const inputRef = useRef(null);
-
-  // Keeping the input focused after every render
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [searchTerm]); // Only trigger focus when searchTerm changes
-
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
   return (
     <div
       style={{
         display: "flex",
         alignItems: "center",
         margin: "20px 0",
-        marginLeft: "100px",
+        marginLeft: "120px",
         backgroundColor: "#f5f5f5",
         borderRadius: "25px",
-        padding: "10px 15px",
+        padding: "5px 10px",
         width: "fit-content",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
       <input
-        ref={inputRef} // Attach the ref to the input
         type="text"
+        onChange={handleChange}
         placeholder="Search books..."
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
         style={{
           border: "none",
           outline: "none",
@@ -39,6 +31,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
           padding: "8px",
           width: "200px",
         }}
+        autoFocus
       />
       <img
         src="https://img.icons8.com/?size=100&id=7695&format=png&color=000000"

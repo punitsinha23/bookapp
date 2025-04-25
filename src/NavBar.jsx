@@ -8,17 +8,15 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/">MyLibrary</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">MyOpenLibrary</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/favorites">Favorites</Nav.Link>
+            <Nav.Link as={Link} to="/AddBooks">Add</Nav.Link>
             <NavDropdown title="More" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/about">About</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/contact">Contact</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/settings">Settings</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/About">About</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
