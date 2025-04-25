@@ -71,7 +71,6 @@ export default function AddBooks({ onCreated }) {
       const updatedBooks = myBooks.filter((_, index) => index !== deleteIndex);
       setMyBooks(updatedBooks);
     } catch (error) {
-      console.error("Error:", error);
       setError(error.message || "Failed to delete book.");
     } finally {
       setLoading(false);
