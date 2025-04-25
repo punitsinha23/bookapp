@@ -27,12 +27,10 @@ function SearchBar({ searchTerm, setSearchTerm }) {
     backgroundColor: "#f5f5f5",
     borderRadius: "25px",
     padding: "5px 10px",
-    width: "fit-content",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     justifyContent: "center", // Center content horizontally
     marginLeft: windowWidth <= 600 ? "0px" : "120px", // No margin for mobile
     marginRight: windowWidth <= 600 ? "0px" : "120px", // No margin for mobile
-    width: windowWidth <= 600 ? "100%" : "fit-content", // Full width on mobile
   };
 
   const inputStyle = {
@@ -41,7 +39,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
     backgroundColor: "transparent",
     fontSize: windowWidth <= 600 ? "14px" : "16px", // Adjust font size on mobile
     padding: "8px",
-    width: windowWidth <= 600 ? "100%" : "200px", // Full width on mobile
+    width: windowWidth <= 600 ? "100%" : "200px", // Full width on mobile, fixed width on desktop
   };
 
   return (
