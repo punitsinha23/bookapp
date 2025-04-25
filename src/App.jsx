@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/get/");
+        const response = await fetch("https://bookappapi-production-e3f8.up.railway.app/get/");
         const data = await response.json();
         console.log("Fetched Books:", data);
         setBooks(data);

@@ -39,7 +39,7 @@ export default function AddBooks({ onCreated }) {
     setError(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/post", {
+      const res = await fetch("https://bookappapi-production-e3f8.up.railway.app/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
