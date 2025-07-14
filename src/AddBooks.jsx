@@ -39,7 +39,7 @@ export default function AddBooks({ onCreated }) {
     setError(null);
 
     try {
-      const res = await fetch("https://bookappapi-5smm.onrender.com/api/get/post", {
+      const res = await fetch("https://bookappapi-5smm.onrender.com/api/get/post/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
