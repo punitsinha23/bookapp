@@ -19,7 +19,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
     setSearchTerm(e.target.value);
   };
 
-  // Conditional styles based on window width
+ 
   const containerStyle = {
     display: "flex",
     alignItems: "center",
@@ -28,7 +28,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
     borderRadius: "25px",
     padding: "5px 10px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    justifyContent: "center", // Center content horizontally
+    justifyContent: "center",
     marginLeft: windowWidth <= 600 ? "0px" : "120px", // No margin for mobile
     marginRight: windowWidth <= 600 ? "0px" : "120px", // No margin for mobile
   };
