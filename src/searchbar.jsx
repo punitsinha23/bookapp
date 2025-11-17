@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 function SearchBar({ searchTerm, setSearchTerm }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Update window width on resize
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -29,17 +28,17 @@ function SearchBar({ searchTerm, setSearchTerm }) {
     padding: "5px 10px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     justifyContent: "center",
-    marginLeft: windowWidth <= 600 ? "0px" : "120px", // No margin for mobile
-    marginRight: windowWidth <= 600 ? "0px" : "120px", // No margin for mobile
+    marginLeft: windowWidth <= 600 ? "0px" : "120px", 
+    marginRight: windowWidth <= 600 ? "0px" : "120px", 
   };
 
   const inputStyle = {
     border: "none",
     outline: "none",
     backgroundColor: "transparent",
-    fontSize: windowWidth <= 600 ? "14px" : "16px", // Adjust font size on mobile
+    fontSize: windowWidth <= 600 ? "14px" : "16px", 
     padding: "8px",
-    width: windowWidth <= 600 ? "100%" : "200px", // Full width on mobile, fixed width on desktop
+    width: windowWidth <= 600 ? "100%" : "200px", 
   };
 
   return (
@@ -50,7 +49,6 @@ function SearchBar({ searchTerm, setSearchTerm }) {
         placeholder="Search books..."
         value={searchTerm}
         style={inputStyle}
-        autoFocus
       />
       <img
         src="https://img.icons8.com/?size=100&id=7695&format=png&color=000000"

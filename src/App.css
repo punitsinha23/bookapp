@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,7 +6,7 @@ body {
   background-color: #fff6f6;
 }
 
-/* Page Title */
+
 h1 {
   text-align: center;
   color: #2c3e50;
@@ -98,68 +98,92 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
-  background-color: #f5f5f5;
-  flex-wrap: wrap; 
-  
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #eef1f6, #ffffff);
+  gap: 40px;
+  flex-wrap: wrap;
+  border-radius: 16px;
 }
 
 /* Left Text Box */
 .hero-text {
   flex: 1;
-  padding: 20px;
-  color: #222; 
+  padding: 30px;
+  color: #222;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 2px solid #ccc;          
-  border-radius: 12px;            
-  background-color: #ffffffc2;     
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.8s ease;
 }
 
 .hero-text h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
   text-align: center;
+  font-weight: bold;
+  color: #111;
 }
 
 .hero-text p {
   font-size: 1.2rem;
-}
-.hero-text ul {
-  padding: 10px;
-  margin-left: 28px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-/* Right Image Box */
+.hero-text ul {
+  padding: 10px 0;
+  margin-left: 25px;
+  font-size: 1.1rem;
+}
+
+/* Right Image/Video Box */
 .banner {
   flex: 1;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   padding: 10px;
 }
 
-.banner img {
+.banner img,
+.banner video {
   width: 100%;
-  max-width: 600px;
+  max-width: 550px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 14px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 600px) {
+.banner img:hover,
+.banner video:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile Version */
+@media (max-width: 768px) {
   .hero-section {
     flex-direction: column-reverse;
-    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .hero-text {
     padding: 20px;
   }
 
-  .hero-text, .banner {
+  .banner img,
+  .banner video {
     width: 100%;
-  }
-
-  .banner img {
     max-width: 100%;
   }
 }
 
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

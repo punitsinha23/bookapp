@@ -23,8 +23,9 @@ function App() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await fetch("https://bookappapi-5smm.onrender.com/api/get");
+        const response = await fetch("http://localhost:8000/api/get");
         const data = await response.json();
+        console.log("API Response:", data);
         console.log("Fetched Books:", data);
         setBooks(data);
         setLoading(false);
@@ -76,11 +77,15 @@ function App() {
           </ul>
         </div>
         <div className="banner">
-          <img
-            src="/image/ChatGPT Image Apr 18, 2025, 08_41_01 PM.png"
-            alt="Library Banner"
-          />
-        </div>
+        <img
+          src="banner.jpg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-auto"
+        />
+      </div>
       </div>
 
       <h1>Top Books</h1>
