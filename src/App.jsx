@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await fetch("http://localhost:8000/api/get");
+        const response = await fetch("https://bookappapi-5smm.onrender.com/api/get/");
         const data = await response.json();
         console.log("API Response:", data);
         console.log("Fetched Books:", data);
