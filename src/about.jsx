@@ -6,7 +6,7 @@ const About = () => {
       <div className="text-center mb-4">
         <h1 className="display-4 fw-bold">About Our Book Sharing Platform</h1>
         <p className="lead mt-3">
-          Discover, upload, and download books — completely free!
+          Discover, upload, and download books — completely free
         </p>
       </div>
 
